@@ -13,6 +13,12 @@ import androidx.compose.material.icons.filled.ArrowBack
 import androidx.compose.material.icons.filled.Edit
 import com.example.remotedatabase.ui.navigation.DestinasiNavigasi
 
+object DestinasiDetail : DestinasiNavigasi {
+    override val route = "detail/{nim}"
+    override val titleRes = "Detail Mahasiswa"
+    const val NIM = "nim"
+    val routeWithArgs = "$route/{$NIM}"
+}
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
