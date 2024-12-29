@@ -46,6 +46,15 @@ import com.example.remotedatabase.ui.viewmodel.HomeViewModel
 
 
 @Composable
+fun OnLoading( modifier: Modifier = Modifier){
+    Image(
+        modifier = modifier.size(100.dp),
+        painter = painterResource(R.drawable.loading),
+        contentDescription = stringResource(R.string.loading)
+    )
+}
+
+@Composable
 fun OnError(
     retryAction: () -> Unit,
     modifier: Modifier = Modifier
