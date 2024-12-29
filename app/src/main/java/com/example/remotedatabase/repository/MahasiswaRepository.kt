@@ -4,6 +4,13 @@ import com.example.remotedatabase.model.Mahasiswa
 import com.example.remotedatabase.service_api.MahasiswaService
 import java.io.IOException
 
+interface MahasiswaRepository{
+    suspend fun getMahasiswa(): List<Mahasiswa>
+    suspend fun insertMahasiswa(mahasiswa: Mahasiswa)
+    suspend fun updateMahasiswa(nim: String, mahasiswa: Mahasiswa)
+    suspend fun deleteMahasiswa(nim: String)
+    suspend fun getMahasiswaByNim(nim: String):Mahasiswa
+}
 
 class NetworkMahasiswaRepository(
     private val mahasiswaApiService: MahasiswaService
