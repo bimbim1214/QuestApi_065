@@ -46,6 +46,33 @@ import com.example.remotedatabase.ui.viewmodel.HomeViewModel
 
 
 @Composable
+fun OnError(
+    retryAction: () -> Unit,
+    modifier: Modifier = Modifier
+){
+    Column (
+        modifier = modifier,
+        verticalArrangement = Arrangement.Center,
+        horizontalAlignment = Alignment.CenterHorizontally
+    ){
+        Image(
+            painter = painterResource(id = R.drawable.error),
+            contentDescription = "Error Image",
+            modifier = Modifier
+                .size(100.dp) // Atur ukuran gambar menjadi 100x100 dp
+        )
+        Text(
+            text = stringResource(R.string.loading_failed),
+            modifier = Modifier.padding(16.dp)
+        )
+        Button(onClick = retryAction)
+        {
+            Text(stringResource(R.string.retry))
+        }
+    }
+}
+
+@Composable
 fun MhsLayout(
     mahasiswa: List<Mahasiswa>,
     modifier: Modifier = Modifier,
